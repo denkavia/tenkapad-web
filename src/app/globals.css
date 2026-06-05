@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #7288ae;
-  --foreground: #eae0cf;
-  --background: #111844;
+  --primary: #3338a0;
+  --foreground: #2d336b;
+  --background: #fbfbfb;
 }
 
 @theme {
@@ -13,5 +13,5 @@
 }
 
 body {
-  @apply bg-background text-foreground;
+  @apply bg-background text-foreground cursor-alias;
 }
