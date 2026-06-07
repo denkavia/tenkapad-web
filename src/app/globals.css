@@ -21,7 +21,7 @@ body {
 }
 
 .block-content {
-  @apply outline-none ring-0;
+  @apply outline-none ring-0 flex justify-start w-full;
 }
 
 .block-wrapper .drag-handle {

@@ -1,9 +1,11 @@
 import React from "react";
 
 export type BlockProps = {
+  uid: string;
   type?: "text";
   content: string | null;
-  children?: React.ReactNode[];
+  childs?: React.ReactNode[];
+  keydownHandler?: (e: React.KeyboardEvent) => void;
 };
 
 const renderBlock = (props: BlockProps) => {
@@ -12,7 +14,9 @@ const renderBlock = (props: BlockProps) => {
       <div
         contentEditable={"true"}
         suppressContentEditableWarning={true}
-        className={`outline-none ring-0`}
+        className={`outline-none ring-0 w-full`}
+        onKeyDown={props.keydownHandler}
+        id={props.uid}
       >
         {props.content}
       </div>
