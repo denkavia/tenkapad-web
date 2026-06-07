@@ -134,14 +134,14 @@ export default function TpEditor() {
 
   return (
     <div>
-      <div className={`border`} onKeyDown={onKeyDown} onKeyUp={onKeyUp}>
+      <div
+        className={`border p-4 rounded`}
+        onKeyDown={onKeyDown}
+        onKeyUp={onKeyUp}
+      >
         {documentBlockTree.map((block: TpBlockType) => {
           return renderTpBlock(block, blockChangeHandler, onFocus, onBlur);
         })}
-      </div>
-      <br />
-      <div>
-        <button onClick={() => console.log(documentBlockTree)}>Print</button>
       </div>
     </div>
   );

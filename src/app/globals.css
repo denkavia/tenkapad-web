@@ -15,3 +15,21 @@
 body {
   @apply bg-background text-foreground;
 }
+
+.tp-container-wrapper {
+  @apply w-full flex justify-center;
+}
+
+.tp-container {
+  @apply max-w-6xl w-full px-4;
+}
+
+.tp-block {
+  @apply p-4 rounded w-full
+
+  hover:bg-primary/10 focus:bg-primary/10;
+}
+
+.tp-block-control {
+  @apply cursor-pointer;
+}

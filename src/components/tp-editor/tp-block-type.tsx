@@ -18,14 +18,16 @@ export function renderTpBlock(
 ) {
   if (block.type === "tp-block-text") {
     return (
-      <TpBlockText
-        block={block}
-        key={block.id}
-        onChange={blockChangeHandler}
-        blockId={block.id}
-        onFocus={onFocus}
-        onBlur={onBlur}
-      ></TpBlockText>
+      <div className={`flex gap-2 items-center mb-4`} key={block.id}>
+        <div className={`tp-block-control`}>#</div>
+        <TpBlockText
+          block={block}
+          onChange={blockChangeHandler}
+          blockId={block.id}
+          onFocus={onFocus}
+          onBlur={onBlur}
+        ></TpBlockText>
+      </div>
     );
   } else {
     return <div key={block.id}></div>;

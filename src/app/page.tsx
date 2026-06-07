@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div>
       <Navbar></Navbar>
-      <div className={`flex justify-center`}>
-        <div className={`w-full max-w-6xl pt-8`}>
+      <div className={`tp-container-wrapper`}>
+        <div className={`tp-container pt-8`}>
           <TpEditor></TpEditor>
         </div>
       </div>

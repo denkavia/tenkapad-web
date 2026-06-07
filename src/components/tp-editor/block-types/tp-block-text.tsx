@@ -34,6 +34,7 @@ export default function TpBlockText(props: {
 
   return (
     <div
+      className={`tp-block`}
       contentEditable={true}
       suppressContentEditableWarning={true}
       onInput={(e) => handleChanges(e)}
