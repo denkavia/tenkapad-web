@@ -29,8 +29,10 @@ export default function Editor() {
     pressedKeys.current.add(e.key);
 
     if (pressedKeys.current.has("Enter")) {
-      e.preventDefault();
-      addNewBlock();
+      if (!pressedKeys.current.has("Shift")) {
+        e.preventDefault();
+        addNewBlock();
+      }
     }
   };
 
