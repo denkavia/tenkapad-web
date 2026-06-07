@@ -13,5 +13,17 @@
 }
 
 body {
-  @apply bg-background text-foreground cursor-alias;
+  @apply bg-background text-foreground;
+}
+
+.block-wrapper {
+  @apply my-2 hover:bg-primary/10 transition-colors flex;
+}
+
+.block-content {
+  @apply outline-none ring-0;
+}
+
+.block-wrapper .drag-handle {
+  @apply cursor-pointer px-2 flex justify-center h-full;
 }
