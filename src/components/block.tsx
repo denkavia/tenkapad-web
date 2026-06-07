@@ -5,7 +5,6 @@ export type BlockProps = {
   type?: "text";
   content: string | null;
   childs?: React.ReactNode[];
-  keydownHandler?: (e: React.KeyboardEvent) => void;
 };
 
 const renderBlock = (props: BlockProps) => {
@@ -15,7 +14,6 @@ const renderBlock = (props: BlockProps) => {
         contentEditable={"true"}
         suppressContentEditableWarning={true}
         className={`outline-none ring-0 w-full`}
-        onKeyDown={props.keydownHandler}
         id={props.uid}
       >
         {props.content}
