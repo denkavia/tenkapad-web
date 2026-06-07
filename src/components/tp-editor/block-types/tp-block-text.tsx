@@ -15,9 +15,11 @@ type PropsType = {
 export default function TpBlockText(props: {
   block: TpBlockType;
   onChange: (block: TpBlockType) => void;
+  onFocus: (blockId: string) => void;
+  onBlur: (blockId: string) => void;
   blockId: string;
 }) {
-  const { block, onChange } = props;
+  const { block, onChange, onFocus, onBlur } = props;
 
   const handleChanges = (e: React.InputEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -35,6 +37,9 @@ export default function TpBlockText(props: {
       contentEditable={true}
       suppressContentEditableWarning={true}
       onInput={(e) => handleChanges(e)}
+      onFocus={() => onFocus(block.id)}
+      onBlur={() => onBlur(block.id)}
+      id={block.id}
     >
       {block.props.content}
     </div>

@@ -4,7 +4,7 @@ import {
   renderTpBlock,
   TpBlockType,
 } from "@/components/tp-editor/tp-block-type";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const initialDocumentBlockTree: TpBlockType[] = [
   {
@@ -15,9 +15,21 @@ const initialDocumentBlockTree: TpBlockType[] = [
     },
     children: [],
   },
+  {
+    id: "initial-block-2",
+    type: "tp-block-text",
+    props: {
+      content: "Write another here...",
+    },
+    children: [],
+  },
 ];
 
 export default function TpEditor() {
+  const [focusedBlockId, setFocusedBlockId] = useState<string | null>(
+    "initial-block-2",
+  );
+
   const [documentBlockTree, setDocumentBlockTree] = React.useState<
     TpBlockType[]
   >(initialDocumentBlockTree);
@@ -36,11 +48,31 @@ export default function TpEditor() {
     });
   };
 
+  useEffect(() => {
+    if (focusedBlockId) {
+      console.log("Focused block id: " + focusedBlockId);
+      console.log(document.getElementById(focusedBlockId));
+      document.getElementById(focusedBlockId)?.focus();
+    }
+  }, [focusedBlockId]);
+
+  const onFocus = (blockId: string) => {
+    if (focusedBlockId != blockId) {
+      setFocusedBlockId(blockId);
+    }
+  };
+
+  const onBlur = (blockId: string) => {
+    if (focusedBlockId == blockId) {
+      setFocusedBlockId(null);
+    }
+  };
+
   return (
     <div>
       <div className={`border`}>
         {documentBlockTree.map((block: TpBlockType) => {
-          return renderTpBlock(block, blockChangeHandler);
+          return renderTpBlock(block, blockChangeHandler, onFocus, onBlur);
         })}
       </div>
       <br />

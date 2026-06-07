@@ -13,6 +13,8 @@ export interface TpBlockInterface {
 export function renderTpBlock(
   block: TpBlockType,
   blockChangeHandler: (block: TpBlockType) => void,
+  onFocus: (blockId: string) => void,
+  onBlur: (blockId: string) => void,
 ) {
   if (block.type === "tp-block-text") {
     return (
@@ -21,6 +23,8 @@ export function renderTpBlock(
         key={block.id}
         onChange={blockChangeHandler}
         blockId={block.id}
+        onFocus={onFocus}
+        onBlur={onBlur}
       ></TpBlockText>
     );
   } else {
