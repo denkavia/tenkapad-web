@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar";
-import Editor from "@/components/editor";
+import TpEditor from "@/components/tp-editor/tp-editor";
 
 export default function Home() {
   return (
@@ -7,7 +7,7 @@ export default function Home() {
       <Navbar></Navbar>
       <div className={`flex justify-center`}>
         <div className={`w-full max-w-6xl pt-8`}>
-          <Editor></Editor>
+          <TpEditor></TpEditor>
         </div>
       </div>
     </div>

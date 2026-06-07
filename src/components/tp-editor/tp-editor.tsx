@@ -1,9 +1,9 @@
 "use client";
 
-import Block, { BlockProps } from "@/components/block";
+import TpBlock, { BlockProps } from "@/components/tp-editor/tp-block";
 import React, { useEffect, useRef, useState } from "react";
 
-export default function Editor() {
+export default function TpEditor() {
   const [blocks, setBlocks] = useState<BlockProps[]>([
     { uid: "initial-id", content: "Write here...", type: "text" },
   ]);
@@ -58,7 +58,7 @@ export default function Editor() {
     >
       <div id={`block-area`}>
         {blocks.map((block) => (
-          <Block
+          <TpBlock
             key={block.uid}
             uid={block.uid}
             content={block.content}

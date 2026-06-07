@@ -22,7 +22,7 @@ const renderBlock = (props: BlockProps) => {
   }
 };
 
-export default function Block(props: BlockProps) {
+export default function TpBlock(props: BlockProps) {
   return (
     <div className={`block-wrapper flex justify-between gap-1 items-center`}>
       <div className={`drag-handle`}>#</div>
